@@ -1,4 +1,4 @@
-print ("######## Identificador de legibilidade para voto ###########")
+print ("######## Identificador de legibilidade para voto ##########")
 
 idade = int(input("Digite a sua idade = "))
 
