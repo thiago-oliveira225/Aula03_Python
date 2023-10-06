@@ -40,5 +40,5 @@ while (True):
 
     elif (opcao == 5):
     
-        print ("Obrigado por utilizar a calculadora !!")
+        print ("Obrigado por utilizar a calculadora !!!")
         break    
