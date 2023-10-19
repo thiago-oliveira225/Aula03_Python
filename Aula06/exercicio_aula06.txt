@@ -1,0 +1,227 @@
+Claro! Aqui estão 10 exercícios de nível iniciante relacionados a dicionários em Python:
+
+1. Criando um Dicionário:
+   Crie um dicionário vazio chamado `meu_dict` e adicione três pares chave-valor a ele.
+
+2. **Acessando Valores**:
+   A partir do dicionário criado no exercício anterior, acesse o valor associado a uma das chaves.
+
+3. Adicionando e Modificando:
+   Crie um dicionário vazio chamado `pessoas` e adicione três pares chave-valor representando nomes e idades. Em seguida, modifique a idade de uma das pessoas.
+
+4. Verificação de Chave:
+   Crie um dicionário com nomes de frutas como chaves e quantidades como valores. Peça ao usuário para inserir o nome de uma fruta e verifique se ela existe no dicionário.
+
+5. Removendo Pares Chave-Valor:
+   A partir do dicionário das frutas, remova uma fruta e seu valor associado.
+
+6. Iteração por Chaves:
+   Crie um dicionário com pelo menos 5 pares chave-valor e use um loop `for` para imprimir todas as chaves.
+
+7. Iteração por Valores:
+   Usando o mesmo dicionário do exercício anterior, use um loop `for` para imprimir todos os valores.
+
+8. Iteração por Pares Chave-Valor:
+   Usando o mesmo dicionário do exercício anterior, use um loop `for` para imprimir todos os pares chave-valor.
+
+9. Mesclando Dicionários:
+   Crie dois dicionários separados e, em seguida, crie um terceiro dicionário que seja a mescla dos dois.
+
+10. Contagem de Palavras:
+    Peça ao usuário para inserir uma frase e crie um dicionário onde as chaves são palavras da frase e os valores são a contagem de quantas vezes cada palavra aparece na frase.
+
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+
+
+Exercício 1: Criando um Dicionário
+```python
+meu_dict = {}
+meu_dict["chave1"] = "valor1"
+meu_dict["chave2"] = "valor2"
+meu_dict["chave3"] = "valor3"
+```
+
+Exercício 2: Acessando Valores
+```python
+print(meu_dict["chave1"])
+```
+
+Exercício 3: Adicionando e Modificando
+```python
+pessoas = {}
+pessoas["Alice"] = 25
+pessoas["Bob"] = 30
+pessoas["Charlie"] = 22
+pessoas["Alice"] = 26  # Modificando a idade de Alice
+```
+
+Exercício 4: Verificação de Chave
+```python
+frutas = {"maçã": 5, "banana": 3, "laranja": 8}
+fruta = input("Digite o nome de uma fruta: ")
+if fruta in frutas:
+    print("Esta fruta existe no dicionário.")
+```
+
+Exercício 5: Removendo Pares Chave-Valor
+```python
+del frutas["banana"]  # Remove a banana e seu valor associado
+```
+
+Exercício 6: Iteração por Chaves
+```python
+for chave in meu_dict.keys():
+    print(chave)
+```
+
+Exercício 7: Iteração por Valores
+```python
+for valor in meu_dict.values():
+    print(valor)
+```
+
+Exercício 8: Iteração por Pares Chave-Valor
+```python
+for chave, valor in meu_dict.items():
+    print(f"Chave: {chave}, Valor: {valor}")
+```
+
+Exercício 9: Mesclando Dicionários
+```python
+dict1 = {"a": 1, "b": 2}
+dict2 = {"c": 3, "d": 4}
+dict3 = {**dict1, **dict2}
+```
+
+Exercício 10: Contagem de Palavras
+```python
+frase = input("Digite uma frase: ")
+palavras = frase.split()
+contagem = {}
+for palavra in palavras:
+    if palavra in contagem:
+        contagem[palavra] += 1
+    else:
+        contagem[palavra] = 1
+print(contagem)
+```
+
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+
+
+Projeto 1: Criando um Gerenciador de Contatos sem Funções
+
+Neste projeto, você criará um gerenciador de contatos simples sem usar funções. O programa permitirá ao usuário adicionar, visualizar e buscar contatos por nome.
+
+```python
+contatos = {}
+
+while True:
+    print("\nMenu:")
+    print("1. Adicionar Contato")
+    print("2. Buscar Contato")
+    print("3. Sair")
+    escolha = input("Escolha uma opção: ")
+
+    if escolha == "1":
+        nome = input("Digite o nome do contato: ")
+        telefone = input("Digite o número de telefone do contato: ")
+        contatos[nome] = telefone
+        print(f"Contato {nome} adicionado com sucesso!")
+
+    elif escolha == "2":
+        nome = input("Digite o nome do contato que deseja buscar: ")
+        if nome in contatos:
+            print(f"Nome: {nome}, Telefone: {contatos[nome]}")
+        else:
+            print("Contato não encontrado.")
+
+    elif escolha == "3":
+        break
+
+    else:
+        print("Opção inválida. Tente novamente.")
+
+```
+
+Projeto 2: Calculadora de Frequência de Palavras sem Funções
+
+Neste projeto, você criará uma calculadora que recebe uma string como entrada e retorna um dicionário que mostra a frequência de cada palavra na string, sem usar funções.
+
+```python
+frase = input("Digite uma frase: ")
+palavras = frase.split()
+frequencia = {}
+
+for palavra in palavras:
+    if palavra in frequencia:
+        frequencia[palavra] += 1
+    else:
+        frequencia[palavra] = 1
+
+print("\nFrequência de palavras:")
+for palavra, contagem in frequencia.items():
+    print(f"{palavra}: {contagem}")
+```
+
+Esses projetos não utilizam funções, mas ainda ajudam a praticar o uso de dicionários em Python. Eles são simples o suficiente para iniciantes e demonstram como os dicionários podem ser usados em situações do mundo real.
+
+
+--------------------------------------------------------------------------------------------------------------
+
+agenda = [{}]
+
+while True:
+    print ("Escolha uma opção: \n")
+    print("Opção 1: Adicionar um contato na agenda: \n")
+    print("Opção 2: Listar todos os contatos: \n")
+    print("Opção 3: Verificar um contato específico: \n")
+    print("Opção 4: Sair do programa: \n")
+
+    opcao = int(input())
+
+    if opcao == 1:
+    
+        nomeContato = (input("Digite o nome a ser adicionada = "))
+        numeroContato = int(input("Digite o numero a ser adicionado = "))
+        contato = {"Nome": nomeContato, "Telefone":numeroContato}
+        agenda.append(contato)
+
+    elif opcao == 2:    
+        for i in agenda:
+            print(i, "\n")
+
+    elif opcao ==3:
+        nome = (input("Digite o nome a ser buscado = "))
+        if nome in agenda:
+            print(f"Nome: {nomeContato}, Telefone: {numeroContato}")
+        else:
+            print("Contato não existe !!")
+
+    else:
+        print("Obrigado por utilizar a agenda")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

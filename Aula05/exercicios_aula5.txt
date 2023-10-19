@@ -1,0 +1,133 @@
+lista = [10,30,20,40]
+
+
+soma = sum(lista)
+valorMaximo = max(lista)
+valorMinimo = min(lista)
+ordemCrescente = lista.sort()
+listaInvertida = (lista.reverse())
+
+print(soma)
+print(valorMaximo)
+print(valorMinimo)
+
+lista2 = [10,30,20,40]
+lista2.sort
+print(lista2)
+
+lista3 = [10,30,20,40]
+lista3.reverse
+print(lista3)
+---------------------------------------------
+
+lista_tarefas = []
+quantidade_tarefas = 0
+
+while True:
+    print ("Escolha uma opção: \n")
+    print("Opção 1: Adicionar uma tarefa a lista: \n")
+    print("Opção 2: Excluir uma tarefa da lista: \n")
+    print("Opção 3: Verificar a quantidade de tarefas: \n")
+    print("Opção 4: Ordenar as tarefas: \n")
+    print("Opção 5: Sair do programa: \n")
+
+    opcao = int(input())
+
+    if opcao == 1:
+    
+        tarefa1 = (input("Digite a tarefa a ser adicionada = "))
+        lista_tarefas.append(tarefa1)
+        print (f"Tarefa Adicionada: {lista_tarefas}")
+        quantidade_tarefas += 1
+
+    elif opcao == 2:
+        print (f"Lista de tarefas atualizada {lista_tarefas}")
+
+        if lista_tarefas == []:
+            print ("Não há tarefas para excluir")
+        else:
+            tarefa2 = (input("Digite a tarefa que deseja remover = "))
+            lista_tarefas.remove(tarefa2) 
+        
+            print (f"Tarefa Removida: {lista_tarefas}")
+            quantidade_tarefas = - 1
+
+    elif opcao == 3:
+ 
+        print (f"Essa é a quantidade de tarefas: {quantidade_tarefas} {lista_tarefas}")
+
+    elif opcao == 4:
+        lista_tarefas.sort()    
+    
+        print (f"Tarefas ordenadas: {lista_tarefas}")  
+
+    else:
+        print("Obrigado por utilizar o nosso gerenciador de tarefas!!!!!")
+
+        break
+---------------------------------------------------------------
+
+lista_numeros = []
+soma = sum(lista_numeros)
+
+
+while True:
+
+    numero1 = int(input("Digite um numero: "))
+    lista_numeros.append(numero1)
+    print(lista_numeros)
+    print("Digite 1 para incluindo mais numeros ou 2 para tirar a média: " )
+
+    resposta = int(input())
+
+    if (resposta == 1):
+        numero2 = int(input("Digite um numero: "))
+        lista_numeros.append(numero2)
+        print(lista_numeros)
+        print("Digite 1 para calcular incluindo mais numeros ou 2 para tirar a média: " )
+
+    else:
+
+        print(soma / lista_numeros.count())
+        
+        break
+------------------------------------------------
+
+# Lista de tarefas
+tarefas = []
+
+while True:
+    print("1. Adicionar tarefa")
+    print("2. Marcar tarefa como concluída")
+    print("3. Exibir tarefas pendentes")
+    print("4. Sair")
+
+    escolha = input("Escolha uma opção: ")
+
+    if escolha == "1":
+        tarefa = input("Digite a tarefa a ser adicionada: ")
+        tarefas.append(tarefa)
+        
+    elif escolha == "2":
+        if tarefas:
+            print("Tarefas pendentes:")
+            for i, tarefa in enumerate(tarefas):
+                print(f"{i + 1}. {tarefa}")
+            numero = int(input("Digite o número da tarefa concluída: ")) - 1
+            if 0 <= numero < len(tarefas):
+                del tarefas[numero]
+            else:
+                print("Número de tarefa inválido.")
+        else:
+            print("Não há tarefas pendentes.")
+    elif escolha == "3":
+        if tarefas:
+            print("Tarefas pendentes:")
+            for i, tarefa in enumerate(tarefas):
+                print(f"{i + 1}. {tarefa}")
+        else:
+            print("Não há tarefas pendentes.")
+    elif escolha == "4":
+        break
+    else:
+        print("Opção inválida. Tente novamente.")
