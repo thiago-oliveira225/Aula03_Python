@@ -1,0 +1,53 @@
+use loja_II;
+
+CREATE TABLE produto 
+(`id` INT(5) PRIMARY KEY NOT NULL AUTO_INCREMENT,
+`nome` VARCHAR(45) NOT NULL, `quantidade` INT NOT NULL,
+`preco` DECIMAL(4) NOT NULL, `tipo` VARCHAR(20));
+
+/*selecionar toda a tabela*/
+SELECT * FROM produto;
+
+/*selecionar uma coluna*/
+SELECT nome_coluna FROM tabela;
+
+/*deletar um item da tabela*/
+DELETE nome FROM produto WHERE id=1;
+
+/*atualizar dados em uma tabela*/
+UPDATE clientes
+SET nome= "João"
+WHERE nome= "Cássio"
+
+/*Criar uma tabela*/
+CREATE TABLE vendas
+(`nomeProduto` VARCHAR(45), `quantidade` INT(5),
+`valor` DECIMAL(10,2), `total` DECIMAL(10,2));
+
+
+SELECT nome,quantidade,preco FROM produto where id=2;
+
+SELECT AVG(preco) from produto;
+
+SELECT id, nome, quantidade FROM produto;
+
+SELECT SUM(quantidade) FROM produto;
+
+SELECT count(*) FROM produto;
+
+SELECT nome, max(preco) aspreco_maximo from produto group by nome;
+
+INSERT INTO clientes(nome, endereco, telefone, email, cpf)
+VALUES ("Thiago Oliveira", "Rua ao Infinito e Além", 123456, "thiago@senai", 123456789)
+
+INSERT INTO produto (nome, quantidade, preco, tipo)
+VALUES ("Smart_TV", 3, 2000, "eletronico")
+
+UPDATE clientes
+SET nome = "Marcos"
+WHERE idclientes =6;
+
+CREATE TABLE compras 
+(`idproduto` INT(5),
+`idcliente` INT (5) NOT NULL, `quantidade`INT (5) ,
+`valor` DECIMAL(4));
