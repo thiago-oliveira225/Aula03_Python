@@ -1,10 +1,11 @@
 import mysql.connector
+from tkinter import *
 
 conexao = mysql.connector.connect(
     host= 'localhost',
     user= 'root',
-    password= 'senha',
-    database= 'nome do bd'
+    password= 'admin',
+    database= 'banco_de_talentos'
 )
 
 cursor = conexao.cursor()
@@ -33,7 +34,6 @@ def inserir_experiencia_profissional(nome_candidato, empresa, cargo, tempo_em_me
     conexao.commit() # Quando edita o banco de dadoS
     cursor.close()
     conexao.close()    
-
 
 
 #READ
@@ -102,22 +102,18 @@ def delete_candidato (id_candidato):
     cursor.execute(query)
     conexao.commit() # Quando edita o banco de dados"""    
     cursor.close()
-    conexao.close()    
+    conexao.close() 
 
 
+delete_candidato('6')
 
 
 # Exemplo de uso:
 
-delete_candidato(1)
 
 
 
 #inserir_formacao('1', 'Thiago', 'UNIP', 'ADS', '4')
-
-#inserir_candidato('Robin', 'robin@senai', '32145696354', 'robin.linkedin', 'robin.github')
-
-
 
 
 
