@@ -1,7 +1,6 @@
 import pygame
 import sys
 import random
-import time
 
 def slot():
     pygame.init()
@@ -54,15 +53,14 @@ def slot():
         lever_count = 0
         attempts_count = 0
 
-        welcome_text = "BEM-VINDO AO SLOT MACHINE !!"
-        welcome_display_time = 100  # Tempo em milissegundos
-
         while True:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     pygame.quit()
                     sys.exit()
                 elif event.type == pygame.MOUSEBUTTONDOWN and button_rect.collidepoint(event.pos):
+                    # Remova a condição abaixo para que o jogo continue mesmo quando as imagens são iguais
+                    # if all(pos == 0 for pos in images_positions):
                     spinning = True
                     posicao0 = random.randint(0, 3)
                     posicao1 = random.randint(0, 1)
@@ -72,27 +70,27 @@ def slot():
                     lever_count += 1
                     current_background = background_image2
 
+                    # Verifica a cada 2 tentativas e define todas as imagens como a imagem 0
                     if lever_count % 2 == 0:
                         posicao0 = posicao1 = posicao2 = posicao3 = 0
                         attempts_count += 1
-                        time.sleep(13000)
-                        welcome_text = "You Winner !!"
 
+                    # Verifica a cada 4 tentativas e define todas as imagens como a imagem 1
                     if lever_count % 4 == 0:
                         posicao0 = posicao1 = posicao2 = posicao3 = 1
                         attempts_count += 1
-                        welcome_text = "Congratulations on reaching lever count 4!"
 
+                    # Verifica a cada 6 tentativas e define todas as imagens como a imagem 2
                     if lever_count % 6 == 0:
                         posicao0 = posicao1 = posicao2 = posicao3 = 2
-                        attempts_count += 1
-                        welcome_text = "Amazing! Lever count is now 6!"
+                        attempts_count += 1 
 
+                    # Verifica a cada 8 tentativas e define todas as imagens como a imagem 3
                     if lever_count % 8 == 0:
                         posicao0 = posicao1 = posicao2 = posicao3 = 3
-                        attempts_count += 1
-                        welcome_text = "Incredible! Lever count reached 8!"
+                        attempts_count += 1    
 
+                    # Se atingir 8 tentativas, reinicia o contador e habilita a alavanca
                     if attempts_count == 7:
                         attempts_count = 0
                         lever_count = 0
@@ -122,14 +120,14 @@ def slot():
             screen.blit(current_background, (0, 0))
 
             current_time = pygame.time.get_ticks()
-            if current_time - welcome_time > welcome_display_time:
+            if current_time - welcome_time > 100:
                 show_welcome = not show_welcome
                 welcome_time = current_time
 
             if show_welcome:
-                font = pygame.font.Font(None, 55)
-                welcome_text_rendered = font.render(welcome_text, True, HEADER_COLOR)
-                screen.blit(welcome_text_rendered, (WIDTH // 2 - welcome_text_rendered.get_width() // 1.9, 135))
+                font = pygame.font.Font(None,55)
+                welcome_text = font.render("BEM-VINDO AO SLOT MACHINE !!", True, HEADER_COLOR)
+                screen.blit(welcome_text, (WIDTH // 2 - welcome_text.get_width() // 1.9, 135))
 
             draw_images([images[pos] for pos in images_positions])
 
@@ -149,3 +147,4 @@ def slot():
         game()
 
 slot()
+
