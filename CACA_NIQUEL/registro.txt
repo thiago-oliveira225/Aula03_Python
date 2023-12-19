@@ -1,0 +1,10 @@
+jogador: Almir | Pontos: 20
+jogador: Alice | Pontos: 30
+jogador: João | Pontos: 30
+jogador: José | Pontos: 30
+jogador: Zuilma | Pontos: 20
+jogador: Zoroastro | Pontos: 100
+jogador: Fracisco | Pontos: 75
+jogador: Chico | Pontos: 30
+jogador: Thiago Oliveira | Pontos: 80
+jogador: Thiago Pereira | Pontos: 60
