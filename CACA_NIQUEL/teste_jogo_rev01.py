@@ -123,16 +123,29 @@ def slot():
                 if show_welcome:
                     welcome_text = font.render("BEM-VINDO AO SLOT MACHINE !!", True, HEADER_COLOR)
                     screen.blit(welcome_text, (WIDTH // 2 - welcome_text.get_width() // 1.9, 135))
-
-            elif spinning and all(pos == images_positions[0] for pos in images_positions):
+################################################################################################################################
+            # LOGICA DE YOU WINNER
+            elif (spinning and all(pos == images_positions[0] for pos in images_positions)) and elapsed_time >= 6000:
                 welcome_text = font.render("YOU WINNER !!", True, HEADER_COLOR)
                 screen.blit(welcome_text, (WIDTH // 2 - welcome_text.get_width() // 1.9, 135))
+            
+            # LEDS PISCANDO
                 
+            # MUSICA TOCANDO  
 
+            # ALGUMA AÇÃO DE PREMIAÇÃO      
+################################################################################################################################
+                
+            # LOGICA DE SORTEANDO
             elif spinning:
                 welcome_text = font.render("SORTEANDO !!", True, HEADER_COLOR)
                 screen.blit(welcome_text, (WIDTH // 2 - welcome_text.get_width() // 1.9, 135))
-    
+
+
+
+                
+
+################################################################################################################################    
 
             draw_images([images[pos] for pos in images_positions])
 
